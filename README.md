@@ -1,4 +1,4 @@
-#Automação de Cadastro de Produtos com PyAutoGUI#
+*Automação de Cadastro de Produtos com PyAutoGUI*
 
 Este projeto automatiza o cadastro de produtos em um site utilizando PyAutoGUI e Pandas.
 
@@ -15,7 +15,7 @@ O script:
 - PyAutoGUI
 - Pandas
 - 📄 Arquivo CSV
-* O arquivo produtos.csv deve conter colunas como:
+- O arquivo produtos.csv deve conter colunas como:
 codigo
 marca
 tipo
