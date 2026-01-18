@@ -1,0 +1,46 @@
+from pyautogui import press, write, moveTo, click, sleep
+import pandas as pd
+
+PAUSE = 0.3 #pausa de meio segundo entre os comandos
+press('win')
+write('Chrome')
+press('enter')
+sleep(1)
+write('https://dlp.hashtagtreinamentos.com/python/intensivao/login')
+press('enter')
+sleep(1.5)
+moveTo(x=786, y=409) #posição do campo de email
+click()
+write('daviviana2602@gmail.com')
+press('tab')
+write('Daviviana123')
+press('tab')
+press('enter')
+sleep(0.5)
+press('tab')
+
+tabela = pd.read_csv('produtos.csv') # Carrega os dados do arquivo CSV na pasta "Projetos" para um DataFrame
+
+for linha in tabela.index:
+    codigo = tabela.loc[linha, "codigo"]  # pegar da tabela o valor do campo pra preencher
+    write(str(codigo)) # preencher o campo com write
+    press("tab") # passar para o proximo campo com press("tab")
+    write(tabela.loc[linha, "marca"])
+    press("tab")
+    write(tabela.loc[linha, "tipo"])
+    press("tab")
+    write(str(tabela.loc[linha, "categoria"]))
+    press("tab")
+    write(str(tabela.loc[linha, "preco_unitario"]))
+    press("tab")
+    write(str(tabela.loc[linha, "custo"]))
+    press("tab")
+    obs = tabela.loc[linha, "obs"]
+    if not pd.isna(obs):
+        write(str(tabela.loc[linha, "obs"]))
+    press("tab")
+    press("enter") # cadastra o produto (botao enviar)
+    press('Home')
+    sleep(0.5)
+    moveTo(x=704, y=295) #posição do campo de email
+    click()
